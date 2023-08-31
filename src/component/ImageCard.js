@@ -19,7 +19,7 @@ const ImageCard = ({ data }) => {
         alt={data.photographerName}
         className="object-cover rounded-t-lg cursor-pointer"
         radius="md"
-        onClick={openModal} // Open the modal when clicked
+        onClick={openModal}
       />
 
 <Modal opened={isModalOpen} onClose={closeModal} padding="2rem">

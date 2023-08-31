@@ -125,12 +125,13 @@ const SearchBar = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleKeyDown}
       />
+      
       <Button
         color="dark"
         variant="outline"
         size="lg"
         onClick={handleSearch}
-        disabled={isLoading}
+        disabled={ !searchTerm || isLoading}
       >
         {isLoading ? <Skeleton width={80} height={32} /> : "Search"}
       </Button>

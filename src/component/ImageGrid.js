@@ -8,7 +8,6 @@ import "../styles.css";
 const ImageGrid = () => {
     const searchData = useSelector((state) => state.imageMasonry.imageMasonry[0]?.data.photos);
     const [gridColumns, setGridColumns] = useState(4);
-    console.log(searchData);
     const breakpointColumnsObj = {
       default: gridColumns,
       1100: gridColumns,
@@ -33,7 +32,7 @@ const ImageGrid = () => {
     return (
       <div className="image-grid-container">
         <div className="absolute top-4 right-4 z-10">
-          <SegmentedControl
+          {searchData && <SegmentedControl
             size="md"
             radius="md"
             color="indigo"
@@ -49,7 +48,7 @@ const ImageGrid = () => {
               { value: 4, label: "4" },
               { value: 5, label: "5" },
             ]}
-          />
+          />}
         </div>
         
         <Masonry
